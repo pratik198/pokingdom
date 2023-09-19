@@ -15,7 +15,8 @@ function App() {
         const response = await fetch('https://content.newtonschool.co/v1/pr/64ccef982071a9ad01d36ff6/pokemonspages1');
         const data = await response.json();
         console.log(data);
-        setPokemonData(data.results);
+        //setPokemonData(data.results);
+        setPokemonData(data[0].results);
         console.log("pokemon data"+pokemonData);
       } catch (error) {
         console.error('Error fetching Pokemon data:', error);
