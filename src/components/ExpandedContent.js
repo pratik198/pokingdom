@@ -1,6 +1,26 @@
 import React from 'react';
 
 function ExpandedContent({ pokemon, onClose }) {
+
+  const apiUrl = pokemon.url;
+
+// Use the fetch function to make a GET request to the API
+fetch(apiUrl)
+  .then(response => {
+    if (!response.ok) {
+      return response;
+    } else {
+      throw new Error('Failed to fetch data from the API');
+    }
+  })
+  .then(data => {
+    console.log("pokemon data in expanded content "+data);
+
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
   return (
     <div className="expanded-content">
       <h2>{pokemon.name}</h2>

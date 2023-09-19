@@ -56,7 +56,7 @@ function App() {
           <PokemonThumbnail
             //key={pokemon.name}
             pokemon={pokemon}
-            onExpandClick={handleExpandClick}
+            onExpandClick={handleExpandClick(pokemon)}
           />
         ))}
       </div>
