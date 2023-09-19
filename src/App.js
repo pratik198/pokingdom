@@ -23,7 +23,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetchPokemonData();
+    //fetchPokemonData();
   }, []);
 
   const handleExpandClick = (pokemon) => {
