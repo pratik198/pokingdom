@@ -40,7 +40,7 @@ function App() {
     // You will need to parse the 'next' URL from the API response to load more data
     try {
       // Make an API request and append new data to the existing pokemonData
-      fetchPokemonData();
+      //fetchPokemonData();
     } catch (error) {
       console.error('Error loading more Pokemon data:', error);
     }
