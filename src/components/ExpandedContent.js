@@ -1,9 +1,8 @@
 import React from 'react';
 
 function ExpandedContent({ pokemon, onClose }) {
-
   const apiUrl = pokemon.url;
-
+  let pokemonDetails;
 // Use the fetch function to make a GET request to the API
 fetch(apiUrl)
   .then(response => {
@@ -14,20 +13,21 @@ fetch(apiUrl)
     }
   })
   .then(data => {
-    console.log("pokemon data in expanded content "+data);
-
+    pokemonDetails = data;
+    console.log("pokemon data in expanded content "+pokemonDetails);
   })
   .catch(error => {
     console.error(error);
   });
 
   return (
+    pokemonDetails &&
     <div className="expanded-content">
-      <h2>{pokemon.name}</h2>
-      <img src={pokemon.image} alt={pokemon.name} />
-      <p>Type: {pokemon.type}</p>
-      <p>Height: {pokemon.height}</p>
-      <p>Weight: {pokemon.weight}</p>
+      <h2>{pokemonDetails.name}</h2>
+      <img src={pokemonDetails.image} alt={pokemon.name} />
+      <p>Type: {pokemonDetails.type}</p>
+      <p>Height: {pokemonDetails.height}</p>
+      <p>Weight: {pokemonDetails.weight}</p>
       <button onClick={onClose}>Close</button>
     </div>
   );
