@@ -13,7 +13,7 @@ fetch(apiUrl)
     }
   })
   .then(data => {
-    pokemonDetails = data;
+    pokemonDetails = data[0];
     console.log("pokemon data in expanded content "+pokemonDetails);
   })
   .catch(error => {

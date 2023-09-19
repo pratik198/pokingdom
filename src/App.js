@@ -7,21 +7,21 @@ import ExpandedContent from './components/ExpandedContent';
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
   const [expandedPokemon, setExpandedPokemon] = useState(null);
+  const [pokemonUrl, setPokemonUrl] = useState('https://content.newtonschool.co/v1/pr/64ccef982071a9ad01d36ff6/pokemonspages1');
+
+  async function fetchPokemonData() {
+    try {
+      const response = await fetch(pokemonUrl);
+      const data = await response.json();
+      setPokemonData(...pokemonData,data[0].results); //syntax confusion
+      console.log("pokemon data"+pokemonData);
+      setPokemonUrl(data[0].next);
+    } catch (error) {
+      console.error('Error fetching Pokemon data:', error);
+    }
+  }
 
   useEffect(() => {
-    // Fetch initial Pokemon data from the API and store it in state
-    async function fetchPokemonData() {
-      try {
-        const response = await fetch('https://content.newtonschool.co/v1/pr/64ccef982071a9ad01d36ff6/pokemonspages1');
-        const data = await response.json();
-        setPokemonData(data[0].results);
-        console.log("pokemon data"+pokemonData);
-      } catch (error) {
-        console.error('Error fetching Pokemon data:', error);
-
-      }
-    }
-
     fetchPokemonData();
   }, []);
 
@@ -40,6 +40,7 @@ function App() {
     // You will need to parse the 'next' URL from the API response to load more data
     try {
       // Make an API request and append new data to the existing pokemonData
+      fetchPokemonData();
     } catch (error) {
       console.error('Error loading more Pokemon data:', error);
     }
@@ -54,7 +55,6 @@ function App() {
       <div className="pokemon-container">
         {pokemonData.map((pokemon) => (
           <PokemonThumbnail
-            //key={pokemon.name}
             pokemon={pokemon}
             onExpandClick={handleExpandClick(pokemon)}
           />
