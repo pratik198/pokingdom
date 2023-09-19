@@ -1,9 +1,10 @@
 /* Center the main heading */
-h1 {
+/* h1 {
     text-align: center;
     margin: 20px 0;
     font-size: 2rem;
-  }
+    
+  } */
   
   /* Style the main container */
   .App {
@@ -103,3 +104,33 @@ h1 {
     background-color: #ff6600;
   }
   
+
+
+
+
+
+  heading-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    height:20vh ;
+    color: aliceblue;
+  }
+  .heading-section h1 {
+    color: #fff;
+    font-size: 7rem;
+    position: absolute;
+    /* transform: translate(-50%, -50%); */
+  }
+  
+  .heading-section h1:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #03a9f4;
+  }
+  
+  .heading-section h1:nth-child(2) {
+    color: #03a9f4;
+    animation: animate 4s ease-in-out infinite;
+  }

@@ -14,8 +14,6 @@ function App() {
       try {
         const response = await fetch('https://content.newtonschool.co/v1/pr/64ccef982071a9ad01d36ff6/pokemonspages1');
         const data = await response.json();
-        console.log(data);
-        //setPokemonData(data.results);
         setPokemonData(data[0].results);
         console.log("pokemon data"+pokemonData);
       } catch (error) {
@@ -49,7 +47,10 @@ function App() {
 
   return (
     <div className="App">
+      <div className='heading-section'>
       <h1>Pokemon Kingdom</h1>
+      <h1>Pokemon Kingdom</h1>
+      </div>
       <div className="pokemon-container">
         {pokemonData.map((pokemon) => (
           <PokemonThumbnail
