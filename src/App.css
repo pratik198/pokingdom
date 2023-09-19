@@ -1,0 +1,105 @@
+/* Center the main heading */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem;
+  }
+  
+  /* Style the main container */
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Style the "More Pokemons" button */
+  button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff4500;
+  }
+  
+  /* Style the Pokemon cards */
+  .pokemon-card {
+    background: linear-gradient(45deg, #f06, #09f); /* Example gradient background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    width: 250px; /* Adjust the card width as needed */
+    text-align: center;
+  }
+  
+  .pokemon-card:hover {
+    transform: translateY(-5px); /* Add elevation effect on hover */
+    background: linear-gradient(45deg, #ff4500, #ff6600); /* Adjust hover gradient */
+  }
+  
+  /* Style the "Know more..." button on cards */
+  .pokemon-card button {
+    background: linear-gradient(45deg, #f06, #09f); /* Match the card gradient */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .pokemon-card button:hover {
+    background: linear-gradient(45deg, #ff4500, #ff6600); /* Adjust hover gradient */
+  }
+  
+  /* Style the ExpandedContent component */
+  .expanded-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    z-index: 9999;
+    max-width: 80%; /* Adjust as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .expanded-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .expanded-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .expanded-content button {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .expanded-content button:hover {
+    background-color: #ff6600;
+  }
+  
